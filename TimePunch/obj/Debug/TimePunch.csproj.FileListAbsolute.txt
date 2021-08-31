@@ -1,0 +1,5 @@
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\TimePunch.csproj.AssemblyReference.cache
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\MainWindow.g.cs
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\App.g.cs
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\TimePunch_MarkupCompile.cache
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\TimePunch_MarkupCompile.lref
