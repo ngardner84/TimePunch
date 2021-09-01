@@ -5,8 +5,6 @@ namespace TimePunch
     public class user
     {
 
-        
-        
         private int employeeId;
         private string password;
         float payRate;
