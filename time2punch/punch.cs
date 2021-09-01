@@ -6,25 +6,24 @@ using System.Threading.Tasks;
 
 namespace TimePunch
 {
-    class punch
+    class Punch
     {
-        string punchType { get; set; }
+        public string punchType { get; set; }
         int punchId { get; set; }
         DateTime dateTime { get; set; }
 
-        public punch()
+        public Punch()
         {
-            punchType = "Undefined";
-            punchId = createPunchId();
+            punchType = null;
+            punchId = generatePunchId();
             dateTime = getDateTime();
-
         }
 
-        public static int createPunchId()
+        private static int generatePunchId() // generates unique ID everytime a new punch is made
         {
-            Random rnd = new Random();
-            int Id = rnd.Next(0, 10000); // probably change this cuz there could be duplicates
-            return Id;
+            string genId = Guid.NewGuid().ToString("N");
+            int uniqueId = Convert.ToInt32(genId);
+            return uniqueId;
         }
 
         public static DateTime getDateTime()
@@ -34,8 +33,6 @@ namespace TimePunch
 
             return dateTime;
         }
-
-
 
     }
 }

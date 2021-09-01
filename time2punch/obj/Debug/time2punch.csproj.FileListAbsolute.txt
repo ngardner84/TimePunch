@@ -4,3 +4,4 @@ C:\Users\nguye\OneDrive\Desktop\TimePunch\time2punch\bin\Debug\time2punch.pdb
 C:\Users\nguye\OneDrive\Desktop\TimePunch\time2punch\obj\Debug\time2punch.csproj.CoreCompileInputs.cache
 C:\Users\nguye\OneDrive\Desktop\TimePunch\time2punch\obj\Debug\time2punch.exe
 C:\Users\nguye\OneDrive\Desktop\TimePunch\time2punch\obj\Debug\time2punch.pdb
+C:\Users\nguye\OneDrive\Desktop\TimePunch\time2punch\obj\Debug\time2punch.csproj.AssemblyReference.cache

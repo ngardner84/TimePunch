@@ -2,38 +2,62 @@
 
 namespace TimePunch
 {
-    public class user
+    public class User
     {
 
         private int employeeId;
         private string password;
         float payRate;
 
-        public user()
+        public User()
         {
-            employeeId = 000;
-            password = "none";
+            employeeId = genUserId();
+            password = null;
             payRate = 0.0f;
 
         }
+        // Generate unique User ID
+        private static int genUserId()
+        {
+            string genId = Guid.NewGuid().ToString("N");
+            int uniqueId = Convert.ToInt32(genId);
+            return uniqueId;
+        }
 
+        // User functions
         private static int StartShift()
         {
+            Punch punch = new Punch
+            {
+                punchType = "StartPunch"
+            };
             return 0;
         }
 
         private static int EndShift()
         {
+            Punch punch = new Punch
+            {
+                punchType = "EndShift"
+            };
             return 0;
         }
 
         private static int StartLunch()
         {
+            Punch punch = new Punch
+            {
+                punchType = "StartLunch"
+            };
             return 0;
         }
 
         private static int EndLunch()
         {
+            Punch punch = new Punch
+            {
+                punchType = "EndLunch"
+            };
             return 0;
         }
 
@@ -42,7 +66,8 @@ namespace TimePunch
             return 0;
         }
 
-        class Admin : user
+        // Admin inherits User
+        public class Admin : User
         {
 
             public Admin()
