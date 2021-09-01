@@ -3,3 +3,13 @@ C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\MainWindow.g.cs
 C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\App.g.cs
 C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\TimePunch_MarkupCompile.cache
 C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\TimePunch_MarkupCompile.lref
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\bin\Debug\TimePunch.exe.config
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\bin\Debug\TimePunch.exe
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\bin\Debug\TimePunch.pdb
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\MainWindow.baml
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\TimePunch.g.resources
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\TimePunch.Properties.Resources.resources
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\TimePunch.csproj.GenerateResource.cache
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\TimePunch.csproj.CoreCompileInputs.cache
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\TimePunch.exe
+C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\TimePunch.pdb
