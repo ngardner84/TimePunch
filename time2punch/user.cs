@@ -1,13 +1,14 @@
 ﻿using System;
 
-namespace TimePunch
+namespace time2punch
 {
     public class User
     {
+        public string name { get; private set; }
+        public string employeeId { get; private set; }
+        public string password { get; set; }
+        public float payRate { get; set; }
 
-        private int employeeId;
-        private string password;
-        float payRate;
 
         public User()
         {
@@ -16,52 +17,52 @@ namespace TimePunch
             payRate = 0.0f;
 
         }
+
         // Generate unique User ID
-        private static int genUserId()
+        private static string genUserId()
         {
             string genId = Guid.NewGuid().ToString("N");
-            int uniqueId = Convert.ToInt32(genId);
-            return uniqueId;
+            return genId;
         }
 
         // User functions
-        private static int StartShift()
+        public Punch StartShift()
         {
             Punch punch = new Punch
             {
-                punchType = "StartPunch"
+                punchType = "StartShift"
             };
-            return 0;
+            return punch;
         }
 
-        private static int EndShift()
+        public Punch EndShift()
         {
             Punch punch = new Punch
             {
                 punchType = "EndShift"
             };
-            return 0;
+            return punch;
         }
 
-        private static int StartLunch()
+        public Punch StartLunch()
         {
             Punch punch = new Punch
             {
                 punchType = "StartLunch"
             };
-            return 0;
+            return punch;
         }
 
-        private static int EndLunch()
+        public Punch EndLunch()
         {
             Punch punch = new Punch
             {
                 punchType = "EndLunch"
             };
-            return 0;
+            return punch;
         }
 
-        private static int ChangePass()
+        private int ChangePass()
         {
             return 0;
         }

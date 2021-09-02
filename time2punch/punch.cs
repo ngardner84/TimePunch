@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TimePunch
+namespace time2punch
 {
-    class Punch
+    public class Punch
     {
         public string punchType { get; set; }
-        int punchId { get; set; }
-        DateTime dateTime { get; set; }
+        public string punchId { get; set; }
+        public DateTime dateTime { get; set; }
+
 
         public Punch()
         {
@@ -19,17 +20,16 @@ namespace TimePunch
             dateTime = getDateTime();
         }
 
-        private static int generatePunchId() // generates unique ID everytime a new punch is made
+        public string generatePunchId() // generates unique ID everytime a new punch is made
         {
             string genId = Guid.NewGuid().ToString("N");
-            int uniqueId = Convert.ToInt32(genId);
-            return uniqueId;
+            return genId;
         }
 
-        public static DateTime getDateTime()
+        public DateTime getDateTime()
         {
             DateTime dateTime = DateTime.Now;
-            Console.WriteLine("time:" + dateTime);
+            //Console.WriteLine("time:" + dateTime);
 
             return dateTime;
         }
