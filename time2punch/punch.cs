@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+
 
 namespace time2punch
 {
     public class Punch
     {
+        public string username { get; set; }
         public string punchType { get; set; }
         public string punchId { get; set; }
         public DateTime dateTime { get; set; }
 
 
-        public Punch()
+        public Punch(string pt, string un)
         {
-            punchType = null;
+            punchType = pt;
+            username = un;
             punchId = generatePunchId();
             dateTime = getDateTime();
         }

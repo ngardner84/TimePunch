@@ -1,64 +1,66 @@
 ﻿using System;
+using System.IO;
+
 
 namespace time2punch
 {
     public class User
     {
         public string name { get; private set; }
-        public string employeeId { get; private set; }
+        public string username { get; private set; }
         public string password { get; set; }
         public float payRate { get; set; }
 
-
-        public User()
+        
+        public User(string un, string pw)
         {
-            employeeId = genUserId();
-            password = null;
+            username = un;
+            password = pw;
             payRate = 0.0f;
+
+            writeUser();
 
         }
 
-        // Generate unique User ID
-        private static string genUserId()
+
+        // 
+        private string writeUser()
         {
-            string genId = Guid.NewGuid().ToString("N");
-            return genId;
+            // NEEDS TO BE DONE
+            // Ask username, Scan csv for existing
+            // If no, proceed
+            // if yes, redo
+
+            using (StreamWriter sw = new StreamWriter("usernames.csv", true))
+            {
+                sw.WriteLine(this.username);
+            }
+
+            return this.username;
         }
 
         // User functions
         public Punch StartShift()
         {
-            Punch punch = new Punch
-            {
-                punchType = "StartShift"
-            };
+            Punch punch = new Punch("StartShift", this.username);
             return punch;
         }
 
         public Punch EndShift()
         {
-            Punch punch = new Punch
-            {
-                punchType = "EndShift"
-            };
+            Punch punch = new Punch("EndShift", this.username);
             return punch;
         }
 
         public Punch StartLunch()
         {
-            Punch punch = new Punch
-            {
-                punchType = "StartLunch"
-            };
+            Punch punch = new Punch("StartLunch", this.username);
             return punch;
         }
 
         public Punch EndLunch()
         {
-            Punch punch = new Punch
-            {
-                punchType = "EndLunch"
-            };
+            Punch punch = new Punch("EndLunch", this.username);
             return punch;
         }
 
@@ -68,36 +70,36 @@ namespace time2punch
         }
 
         // Admin inherits User
-        public class Admin : User
-        {
+        /*
+       public class Admin : User
+       {
 
-            public Admin()
-            {
+           public Admin()
+           {
 
-            }
-            /*
-                    private void changePunch(punchId, employeeId, punchTime)
-                    {
+           }
 
-                    }
+                   private void changePunch(punchId, employeeId, punchTime)
+                   {
 
-                    private static int changePass(employeeId, password)
-                    {
-                        return 0;
-                    }
-                    private static int changeAdmin(employeeId, isAdmin)
-                    {
-                        return 0;
-                    }
-                    private static int createUser(isAdmin, employeeId, password, payRate)
-                    {
-                        return 0;
-                    }
-                    private static int changePayRate(isAdmin, PayRate)
-                    {
-                        return 0;
-                    }
-            */
-        }
+                   }
+
+                   private static int changePass(employeeId, password)
+                   {
+                       return 0;
+                   }
+                   private static int changeAdmin(employeeId, isAdmin)
+                   {
+                       return 0;
+                   }
+                   private static int createUser(isAdmin, employeeId, password, payRate)
+                   {
+                       return 0;
+                   }
+                   private static int changePayRate(isAdmin, PayRate)
+                   {
+                       return 0;
+                   }
+           */
     }
 }
