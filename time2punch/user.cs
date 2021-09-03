@@ -19,12 +19,10 @@ namespace time2punch
             password = pw;
             name = fl;
             payRate = 0.0f;
-
-            writeUser();
+            writeUser(); // debug purposes
 
         }
 
-        // 
         private string writeUser()
         {
             string filePath = "usernames.csv";
@@ -56,8 +54,7 @@ namespace time2punch
             }
             catch (Exception e)
             {
-                Console.WriteLine("Some Error Occured: \n");
-                Console.WriteLine(e.Message);
+                Console.WriteLine("Some Error Occured: \n" + e.Message);
                 Console.ReadLine();
             }
             return this.username;
