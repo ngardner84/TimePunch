@@ -24,15 +24,9 @@ namespace time2punch
 
         }
 
-
         // 
         private string writeUser()
         {
-            // NEEDS TO BE DONE
-            // Ask username, Scan csv for existing
-            // If no, proceed
-            // if yes, redo
-
             string filePath = "usernames.csv";
             List<string> users = new List<string>();
 
@@ -46,10 +40,8 @@ namespace time2punch
                     }
                     sr.Close();
                 }
-
                 using (StreamWriter sw = new StreamWriter(filePath, true))
                 {
-
                     if (users == null | !users.Contains(this.username)) // write to csv if users is empty, or if it doesnt contain the typed username
                     {
                         sw.WriteLine(this.username);
@@ -64,49 +56,10 @@ namespace time2punch
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: \n");
+                Console.WriteLine("Some Error Occured: \n");
                 Console.WriteLine(e.Message);
                 Console.ReadLine();
             }
-
-            /*
-            var file = File.ReadLines("usernames.csv");
-            foreach(var line in file)
-            {
-                if (line.Equals(this.username))
-                {
-                    Console.WriteLine("already exists");
-                    Console.ReadLine();
-
-                }
-                else
-                {
-                    using (StreamWriter sw = new StreamWriter("usernames.csv", true))
-                    {
-                        sw.Close();
-                        sw.WriteLine(this.username);
-                    }
-
-                }
-            }
-
-            /*
-            using (StreamReader sr = new StreamReader("usernames.csv"))
-            {
-                if (this.username != sr.ReadLine())
-                {
-                    using (StreamWriter sw = new StreamWriter("usernames.csv", true))
-                    {
-                        sw.WriteLine(this.username);
-                    }
-                } else
-                {
-                    Console.WriteLine("username exists");
-                    Console.ReadLine();
-                }
-            }
-            */
-
             return this.username;
         }
 
