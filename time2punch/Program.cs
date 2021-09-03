@@ -10,13 +10,14 @@ namespace time2punch
     {
         static void Main(string[] args)
         {
-
+            Console.Write("Enter first and last name: ");
+            string someName = Console.ReadLine();
             Console.Write("Create Username: ");
             string someUserName = Console.ReadLine();
             Console.Write("Create Password: ");
             string somePassword = Console.ReadLine();
 
-            User newUser = new User(someUserName, somePassword);
+            User newUser = new User(someUserName, somePassword, someName);
             Console.WriteLine("\nUsername: " + newUser.username + "\nPassword: " + newUser.password + "\nPayRate: " + newUser.payRate);
            
             

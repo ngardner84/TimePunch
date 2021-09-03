@@ -11,6 +11,7 @@ namespace time2punch
     public class Punch
     {
         public string username { get; set; }
+        public string name { get; set; }
         public string punchType { get; set; }
         public string punchId { get; set; }
         public DateTime dateTime { get; set; }

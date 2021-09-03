@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Microsoft.VisualBasic.FileIO;
 
 
 namespace time2punch
@@ -12,10 +13,11 @@ namespace time2punch
         public float payRate { get; set; }
 
         
-        public User(string un, string pw)
+        public User(string un, string pw, string fl)
         {
             username = un;
             password = pw;
+            name = fl;
             payRate = 0.0f;
 
             writeUser();
@@ -31,10 +33,76 @@ namespace time2punch
             // If no, proceed
             // if yes, redo
 
-            using (StreamWriter sw = new StreamWriter("usernames.csv", true))
+            
+            string filePath = "usernames.csv";
+            string users;
+
+            try
             {
-                sw.WriteLine(this.username);
+                using (StreamReader sr = new StreamReader(filePath))
+                {
+                    users = sr.ReadLine();
+                    sr.Close();
+                }
+
+                using (StreamWriter sw = new StreamWriter(filePath))
+                {
+
+                    if (users == null) // we can imply usernames.csv is empty
+                    {
+                        sw.WriteLine(this.username);
+                    }
+                    else if (users.Contains(this.username)) // not sure why this branch clears the csv file
+                    {
+                        Console.WriteLine("username already exists");
+                        sw.Close();
+                    }
+                }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: \n");
+                Console.WriteLine(e.Message);
+                Console.ReadLine();
+            }
+
+            /*
+            var file = File.ReadLines("usernames.csv");
+            foreach(var line in file)
+            {
+                if (line.Equals(this.username))
+                {
+                    Console.WriteLine("already exists");
+                    Console.ReadLine();
+
+                }
+                else
+                {
+                    using (StreamWriter sw = new StreamWriter("usernames.csv", true))
+                    {
+                        sw.Close();
+                        sw.WriteLine(this.username);
+                    }
+
+                }
+            }
+
+            /*
+            using (StreamReader sr = new StreamReader("usernames.csv"))
+            {
+                if (this.username != sr.ReadLine())
+                {
+                    using (StreamWriter sw = new StreamWriter("usernames.csv", true))
+                    {
+                        sw.WriteLine(this.username);
+                    }
+                } else
+                {
+                    Console.WriteLine("username exists");
+                    Console.ReadLine();
+                }
+            }
+            */
 
             return this.username;
         }
