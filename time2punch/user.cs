@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using Microsoft.VisualBasic.FileIO;
-
+using System.Collections.Generic;
 
 namespace time2punch
 {
@@ -33,26 +33,29 @@ namespace time2punch
             // If no, proceed
             // if yes, redo
 
-            
             string filePath = "usernames.csv";
-            string users;
+            List<string> users = new List<string>();
 
             try
             {
                 using (StreamReader sr = new StreamReader(filePath))
                 {
-                    users = sr.ReadLine();
+                    while (sr.Peek() >= 0) // iterate through the csv and add it to our users list
+                    {
+                        users.Add(sr.ReadLine());
+                    }
                     sr.Close();
                 }
 
-                using (StreamWriter sw = new StreamWriter(filePath))
+                using (StreamWriter sw = new StreamWriter(filePath, true))
                 {
 
-                    if (users == null) // we can imply usernames.csv is empty
+                    if (users == null | !users.Contains(this.username)) // write to csv if users is empty, or if it doesnt contain the typed username
                     {
                         sw.WriteLine(this.username);
+                        sw.Close();
                     }
-                    else if (users.Contains(this.username)) // not sure why this branch clears the csv file
+                    else if (users.Contains(this.username)) 
                     {
                         Console.WriteLine("username already exists");
                         sw.Close();
