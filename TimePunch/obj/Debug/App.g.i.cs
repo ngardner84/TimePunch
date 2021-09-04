@@ -61,7 +61,6 @@ namespace TimePunch {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         public static void Main() {
-            Console.WriteLine("Hello world!");
             TimePunch.App app = new TimePunch.App();
             app.InitializeComponent();
             app.Run();

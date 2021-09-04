@@ -5,3 +5,10 @@ C:\Users\nguye\OneDrive\Desktop\TimePunch\time2punch\obj\Debug\time2punch.csproj
 C:\Users\nguye\OneDrive\Desktop\TimePunch\time2punch\obj\Debug\time2punch.exe
 C:\Users\nguye\OneDrive\Desktop\TimePunch\time2punch\obj\Debug\time2punch.pdb
 C:\Users\nguye\OneDrive\Desktop\TimePunch\time2punch\obj\Debug\time2punch.csproj.AssemblyReference.cache
+C:\Users\bryts\Documents\GitHub\TimePunch\time2punch\bin\Debug\time2punch.exe.config
+C:\Users\bryts\Documents\GitHub\TimePunch\time2punch\bin\Debug\time2punch.exe
+C:\Users\bryts\Documents\GitHub\TimePunch\time2punch\bin\Debug\time2punch.pdb
+C:\Users\bryts\Documents\GitHub\TimePunch\time2punch\obj\Debug\time2punch.csproj.AssemblyReference.cache
+C:\Users\bryts\Documents\GitHub\TimePunch\time2punch\obj\Debug\time2punch.csproj.CoreCompileInputs.cache
+C:\Users\bryts\Documents\GitHub\TimePunch\time2punch\obj\Debug\time2punch.exe
+C:\Users\bryts\Documents\GitHub\TimePunch\time2punch\obj\Debug\time2punch.pdb

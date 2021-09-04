@@ -17,7 +17,9 @@ namespace time2punch
             Console.Write("Create Password: ");
             string somePassword = Console.ReadLine();
 
+            FileWriter fw = new FileWriter();
             User newUser = new User(someUserName, somePassword, someName);
+            fw.writeUser(newUser);
             Console.WriteLine("\nUsername: " + newUser.username + "\nPassword: " + newUser.password + "\nPayRate: " + newUser.payRate);
            
             
