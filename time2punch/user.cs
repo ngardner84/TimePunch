@@ -15,8 +15,8 @@ namespace time2punch
         
         public User(string un, string pw, string fl)
         {
-            username = un;
-            password = pw;
+            this.username = un;
+            this.password = new EncryptPass(pw).GenSaltSHA256();
             name = fl;
             payRate = 0.0f;
 
@@ -51,38 +51,5 @@ namespace time2punch
         {
             return 0;
         }
-
-        // Admin inherits User
-        /*
-       public class Admin : User
-       {
-
-           public Admin()
-           {
-
-           }
-
-                   private void changePunch(punchId, employeeId, punchTime)
-                   {
-
-                   }
-
-                   private static int changePass(employeeId, password)
-                   {
-                       return 0;
-                   }
-                   private static int changeAdmin(employeeId, isAdmin)
-                   {
-                       return 0;
-                   }
-                   private static int createUser(isAdmin, employeeId, password, payRate)
-                   {
-                       return 0;
-                   }
-                   private static int changePayRate(isAdmin, PayRate)
-                   {
-                       return 0;
-                   }
-           */
     }
 }

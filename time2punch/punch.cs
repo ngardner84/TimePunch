@@ -21,16 +21,16 @@ namespace time2punch
         {
             punchType = pt;
             username = un;
-            punchId = generatePunchId();
-            dt = getDateTime();
+            punchId = GeneratePunchId();
+            dt = GetDateTime();
         }
 
-        public string generatePunchId() // generates unique ID everytime a new punch is made
+        public string GeneratePunchId() // generates unique ID everytime a new punch is made
         {
             return Guid.NewGuid().ToString("N"); ;
         }
 
-        public string getDateTime()
+        public string GetDateTime()
         {
             // month/day/year, hour/minute/seconds
             string dt = DateTime.Now.ToString("MM") + "," + DateTime.Now.ToString("dd") + "," + DateTime.Now.ToString("yyyy") 

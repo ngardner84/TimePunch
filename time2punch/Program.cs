@@ -10,6 +10,22 @@ namespace time2punch
     {
         static void Main(string[] args)
         {
+
+            FileWriter fw = new FileWriter();
+
+            fw.CreateFile("usernames.csv");
+
+            Console.WriteLine("enter username: ");
+            string someUserName = Console.ReadLine();
+            Console.WriteLine("create a password: ");
+            string somePassword = Console.ReadLine();
+            Console.WriteLine("enter a first/last name: ");
+            string someFl = Console.ReadLine();
+            User newUser = new User(someUserName, somePassword, someFl);
+            fw.WriteUser(newUser);
+
+
+            /*
             FileWriter fw = new FileWriter();
             Console.Write("Enter first and last name: ");
             string someName = Console.ReadLine();
@@ -17,25 +33,25 @@ namespace time2punch
             string someUserName = Console.ReadLine();
             Console.Write("Create Password: ");
             string somePassword = Console.ReadLine();
-            fw.createFile("usernames.csv");
-
+            fw.CreateFile("usernames.csv");
+            /*
 
             
-            fw.createFile("punch.csv");
+            fw.CreateFile("punch.csv");
             User newUser = new User(someUserName, somePassword, someName);
-            fw.writeUser(newUser);
+            fw.WriteUser(newUser);
             Console.WriteLine("\nUsername: " + newUser.username + "\nPassword: " + newUser.password + "\nPayRate: " + newUser.payRate);
            
             
             Punch a = newUser.StartShift();
-            fw.writePunch(a);
+            fw.WritePunch(a);
             Console.WriteLine("Punch Time: " + a.dt);
             Console.WriteLine("Punch Type: " + a.punchType);
             Console.WriteLine("Punch ID: " + a.punchId);
 
 
             Console.ReadLine();
-
+            */
         }
     }
 }
