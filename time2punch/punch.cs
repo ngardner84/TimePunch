@@ -27,14 +27,11 @@ namespace time2punch
 
         public string generatePunchId() // generates unique ID everytime a new punch is made
         {
-            string genId = Guid.NewGuid().ToString("N");
-            return genId;
+            return Guid.NewGuid().ToString("N"); ;
         }
 
         public string getDateTime()
         {
-            string s = DateTime.Now.ToString("MM/dd/yyyy hh/mm/ss");
-
             // month/day/year, hour/minute/seconds
             string dt = DateTime.Now.ToString("MM") + "," + DateTime.Now.ToString("dd") + "," + DateTime.Now.ToString("yyyy") 
                 + "," + DateTime.Now.ToString("HH") + "," + DateTime.Now.ToString("mm") + "," + DateTime.Now.ToString("ss");
