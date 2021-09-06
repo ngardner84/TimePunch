@@ -137,36 +137,18 @@ namespace time2punch
          */
         public void WriteUser(User temp)
         {
-            List<string> users = new List<string>();
-
-            try
+            if (File.ReadAllText(userFile).Contains(temp.username))
             {
-                using (StreamReader sr = new StreamReader(userFile))
-                {
-                    while (sr.Peek() >= 0) // iterate through the csv and add it to our users list
-                    {
-                        users.Add(sr.ReadLine());
-                    }
-                    sr.Close();
-                }
+                Console.WriteLine("Username exists");
+                Console.ReadLine();
+            }
+            else if (!File.ReadAllText(userFile).Contains(temp.username))
+            {
                 using (StreamWriter sw = new StreamWriter(userFile, true))
                 {
-                    if (!users.Contains(temp.username)) // write to csv if users is empty, or if it doesnt contain the typed username
-                    {
-                        sw.WriteLine(temp.username + "," + temp.password + "," + temp.name);
-                        sw.Close();
-                    }
-                    else if (users.Contains(temp.username))
-                    {
-                        Console.WriteLine("username already exists");
-                        sw.Close();
-                    }
+                    sw.WriteLine(temp.username + "," + temp.password + "," + temp.name);
+                    sw.Close();
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Some Error Occured: \n" + e.Message);
-                Console.ReadLine();
             }
         }
 
