@@ -131,10 +131,6 @@ namespace time2punch
             }
         }
 
-        /* This function fucking sucks
-         * Function checks to see if new user is in system file and if it isn't will write to file
-         * TODO rework file check into separate function for better handling of the user adding process
-         */
         public void WriteUser(User temp)
         {
             if (File.ReadAllText(userFile).Contains(temp.username))
