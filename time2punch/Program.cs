@@ -18,13 +18,15 @@ namespace time2punch
             string somePassword = Console.ReadLine();
 
             FileWriter fw = new FileWriter();
+            fw.createFile("punch.csv");
             User newUser = new User(someUserName, somePassword, someName);
             fw.writeUser(newUser);
             Console.WriteLine("\nUsername: " + newUser.username + "\nPassword: " + newUser.password + "\nPayRate: " + newUser.payRate);
            
             
             Punch a = newUser.StartShift();
-            Console.WriteLine("Punch Time: " + a.dateTime);
+            fw.writePunch(a);
+            Console.WriteLine("Punch Time: " + a.dt);
             Console.WriteLine("Punch Type: " + a.punchType);
             Console.WriteLine("Punch ID: " + a.punchId);
 

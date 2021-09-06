@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace time2punch
         public string name { get; set; }
         public string punchType { get; set; }
         public string punchId { get; set; }
-        public DateTime dateTime { get; set; }
+        public string dt { get; set; }
 
 
         public Punch(string pt, string un)
@@ -22,7 +22,7 @@ namespace time2punch
             punchType = pt;
             username = un;
             punchId = generatePunchId();
-            dateTime = getDateTime();
+            dt = getDateTime();
         }
 
         public string generatePunchId() // generates unique ID everytime a new punch is made
@@ -31,13 +31,15 @@ namespace time2punch
             return genId;
         }
 
-        public DateTime getDateTime()
+        public string getDateTime()
         {
-            DateTime dateTime = DateTime.Now;
-            //Console.WriteLine("time:" + dateTime);
+            string s = DateTime.Now.ToString("MM/dd/yyyy hh/mm/ss");
 
-            return dateTime;
+            // month/day/year, hour/minute/seconds
+            string dt = DateTime.Now.ToString("MM") + "," + DateTime.Now.ToString("dd") + "," + DateTime.Now.ToString("yyyy") 
+                + "," + DateTime.Now.ToString("HH") + "," + DateTime.Now.ToString("mm") + "," + DateTime.Now.ToString("ss");
+
+            return dt;
         }
-
     }
 }

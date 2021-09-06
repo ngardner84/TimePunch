@@ -13,9 +13,68 @@ namespace time2punch
 
         public FileWriter()
         {
-
+            
         }
-        /*Function checks to see if new user is in system file and if it isn't will write to file
+
+        /*
+        Function to create file - will delete existing file if found and recreate
+        */
+        public void createFile(string filename)
+        {
+            try
+            {
+                if (File.Exists(filename))
+                {
+                    File.Delete(filename);
+                    Console.WriteLine("Deleted existing file");
+                }
+
+                using (FileStream fs = File.Create(filename))
+                {
+                    if (filename == "usernames.csv")
+                    {
+                        fs.Close();
+                        try
+                        {
+                            using (StreamWriter sw = new StreamWriter(filename))
+                            {
+                                sw.WriteLine("username, password");
+                                sw.Close();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                        }
+                    }
+                    else if (filename == "punch.csv")
+                    {
+                        try
+                        {
+                            fs.Close();
+                            using (StreamWriter sw2 = new StreamWriter(filename))
+                            {
+                                sw2.WriteLine("Username, PunchType, Month, Day, Year, Hour, Minute, Second, PunchID");
+                                sw2.Close();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                        }
+                    }
+                    Console.WriteLine("Created file");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
+        
+
+        /* This function fucking sucks
+         * Function checks to see if new user is in system file and if it isn't will write to file
          * TODO rework file check into separate function for better handling of the user adding process
          */
         public int writeUser(User temp)
@@ -54,5 +113,25 @@ namespace time2punch
             }
             return 0;
         }
+
+        
+        /*
+         * File will create a punch in the following format
+         * Username, punch type, date/time, punch ID
+         */ 
+        public void writePunch(Punch temp)
+        {
+            string filePath = "punch.csv";
+
+            string punchData = temp.username + "," + temp.punchType + "," + temp.dt + "," + temp.punchId;
+            using (StreamWriter sw = new StreamWriter(filePath, true))
+            {
+                sw.WriteLine(punchData);
+                sw.Close();
+            }
+        }
+        
     }
+
 }
+
