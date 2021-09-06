@@ -26,7 +26,7 @@ namespace time2punch
                 if (File.Exists(filename))
                 {
                     File.Delete(filename);
-                    Console.WriteLine("Deleted existing file");
+                    Console.WriteLine("Deleted" + " " + filename);
                 }
 
                 using (FileStream fs = File.Create(filename))
@@ -63,7 +63,7 @@ namespace time2punch
                             Console.WriteLine(e);
                         }
                     }
-                    Console.WriteLine("Created file");
+                    Console.WriteLine("Created file" + " " + filename);
                 }
             }
             catch (Exception e)

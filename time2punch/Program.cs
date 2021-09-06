@@ -10,14 +10,17 @@ namespace time2punch
     {
         static void Main(string[] args)
         {
+            FileWriter fw = new FileWriter();
             Console.Write("Enter first and last name: ");
             string someName = Console.ReadLine();
             Console.Write("Create Username: ");
             string someUserName = Console.ReadLine();
             Console.Write("Create Password: ");
             string somePassword = Console.ReadLine();
+            fw.createFile("usernames.csv");
 
-            FileWriter fw = new FileWriter();
+
+            
             fw.createFile("punch.csv");
             User newUser = new User(someUserName, somePassword, someName);
             fw.writeUser(newUser);
