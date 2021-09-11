@@ -12,11 +12,11 @@ namespace time2punch
         public string password { get; set; }
         public float payRate { get; set; }
 
-        
+
         public User(string un, string pw, string fl)
         {
             this.username = un;
-            this.password = new EncryptPass(pw).GenSaltSHA256();
+            this.password = pw;
             name = fl;
             payRate = 0.0f;
 

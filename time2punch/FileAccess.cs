@@ -4,16 +4,18 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+
 
 namespace time2punch
 {
-    //Will need to create a FileWriter object whenever we want to run the functions
-    class FileWriter
+    //Will need to create a FileAccess object whenever we want to run the functions
+    class FileAccess
     {
         public static string userFile = "usernames.csv";
         public static string punchFile = "punch.csv";
 
-        public FileWriter()
+        public FileAccess()
         {
             
         }
@@ -21,20 +23,11 @@ namespace time2punch
         /*
         Function to create file - will delete existing file if found and recreate
         */
+
         public void CreateFile(string filename)
         {
             try
             {
-                /* We can omit this, File.Create automatically overwrites the existing one
-
-                if (File.Exists(filename))
-                {
-                    File.Delete(filename);
-                    Console.WriteLine("Deleted" + " " + filename);
-                }
-
-                */
-
                 /* I essentially : 
                  * - Made it so that it only creates a file when a file doesnt exist
                  * - I needed a way to compare hashes of the same inputted password,
@@ -42,7 +35,6 @@ namespace time2punch
                  * - encryptPass.cs works perfectly. It stores hashed information
                  * - and now we only need to retrieve it for log in use.
                  */
-
 
                 if (!File.Exists(userFile))
                 {
@@ -79,51 +71,7 @@ namespace time2punch
                     {
                         Console.WriteLine(e);
                     }
-
                 }
-
-                /* You're stuff
-                using (FileStream fs = File.Create(filename))
-                {
-                    if (filename == userFile)
-                    {
-                        fs.Close();
-                        try
-                        {
-                            using (StreamWriter sw = new StreamWriter(filename))
-                            {
-                                sw.WriteLine("username, hashed pass, first name, last name");
-                                sw.Close();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e);
-                        }
-                    }
-                    else if (filename == punchFile)
-                    {
-                        try
-                        {
-                            fs.Close();
-                            using (StreamWriter sw2 = new StreamWriter(filename))
-                            {
-                                sw2.WriteLine("Username, PunchType, Month, Day, Year, Hour, Minute, Second, PunchID");
-                                sw2.Close();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e);
-                        }
-                    }
-                    Console.WriteLine("Created file" + " " + filename);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            } */
             }
             catch (Exception e)
             {
@@ -131,8 +79,34 @@ namespace time2punch
             }
         }
 
+        /*
+        public static bool CheckLogin(string un, string pw)
+        {
+
+            bool doesExist;
+
+            return doesExist;
+        }*/
+        
+        public static string HashPassword(User temp)
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(temp.password);
+            SHA256Managed hashString = new SHA256Managed();
+            byte[] hash = hashString.ComputeHash(bytes);
+            string hashedString = string.Empty;
+
+            foreach (byte x in hash)
+            {
+                hashedString += String.Format("{0:x2}", x);
+            }
+            
+            return hashedString;
+        }
+
         public void WriteUser(User temp)
         {
+
+            string hashedPass = HashPassword(temp);
             if (File.ReadAllText(userFile).Contains(temp.username))
             {
                 Console.WriteLine("Username exists");
@@ -142,7 +116,7 @@ namespace time2punch
             {
                 using (StreamWriter sw = new StreamWriter(userFile, true))
                 {
-                    sw.WriteLine(temp.username + "," + temp.password + "," + temp.name);
+                    sw.WriteLine(temp.username + "," + hashedPass + "," + temp.name);
                     sw.Close();
                 }
             }
@@ -152,6 +126,7 @@ namespace time2punch
          * File will create a punch in the following format
          * Username, punch type, date/time, punch ID
          */ 
+
         public void WritePunch(Punch temp)
         {
             string punchData = temp.username + "," + temp.punchType + "," + temp.dt + "," + temp.punchId;
@@ -161,8 +136,6 @@ namespace time2punch
                 sw.Close();
             }
         }
-        
     }
-
 }
 

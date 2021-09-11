@@ -1,0 +1,21 @@
+﻿<Page x:Class="TimePunch.Punch1Window"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TimePunch"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Punch1Window"
+      Background = "#CECECE">
+
+    <Grid>
+        <Button Content="start shift" HorizontalAlignment="Left" Margin="76,104,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="Button_Click" FontWeight="Bold" FontSize="16"/>
+            <Button Content="end shift" HorizontalAlignment="Left" Margin="76,172,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="Button_Click" FontWeight="Bold" FontSize="16"/>
+            <Button Content="start lunch" HorizontalAlignment="Left" Margin="253,104,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="Button_Click" FontWeight="Bold" FontSize="16"/>
+            <Button Content="end lunch" HorizontalAlignment="Left" Margin="253,172,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="Button_Click" FontWeight="Bold" FontSize="16"/>
+            <Label Content="ShiftMe" HorizontalAlignment="Left" Margin="61,33,0,0" VerticalAlignment="Top" Width="178" FontSize="36" Height="66" FontWeight="Bold"/>
+            <Image HorizontalAlignment="Left" Height="129" Margin="603,33,0,0" VerticalAlignment="Top" Width="142" Source="CRU_Logo.png"/>
+        <Button Content="log out" HorizontalAlignment="Left" Margin="76,363,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="OpenMainWindow" FontWeight="Bold" FontSize="16"/>
+    </Grid>
+</Page>

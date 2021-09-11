@@ -16,29 +16,26 @@ using System.Windows.Shapes;
 namespace TimePunch
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Punch1Window.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Punch1Window : Page
     {
-        public MainWindow()
+
+
+
+        public Punch1Window()
         {
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void OpenShiftWindow(object sender, RoutedEventArgs e)
+        private void OpenMainWindow(object sender, RoutedEventArgs e)
         {
-            Punch1Window punch = new Punch1Window();
-            this.Show();
-        }
-
-        public void ChangeView(Page view)
-        {
-            MainFrame.NavigationService.Navigate(view);
+           
         }
 
     }

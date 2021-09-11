@@ -11,9 +11,9 @@ namespace time2punch
         static void Main(string[] args)
         {
 
-            FileWriter fw = new FileWriter();
+            FileAccess fa = new FileAccess();
 
-            fw.CreateFile("usernames.csv");
+            fa.CreateFile("usernames.csv");
 
             Console.WriteLine("enter username: ");
             string someUserName = Console.ReadLine();
@@ -22,7 +22,7 @@ namespace time2punch
             Console.WriteLine("enter a first/last name: ");
             string someFl = Console.ReadLine();
             User newUser = new User(someUserName, somePassword, someFl);
-            fw.WriteUser(newUser);
+            fa.WriteUser(newUser);
 
 
             /*

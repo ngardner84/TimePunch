@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("newfile1.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("cru_logo.png")]
 
 
