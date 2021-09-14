@@ -10,12 +10,12 @@
       Background = "#CECECE">
 
     <Grid>
-        <Button Content="start shift" HorizontalAlignment="Left" Margin="76,104,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="Button_Click" FontWeight="Bold" FontSize="16"/>
-            <Button Content="end shift" HorizontalAlignment="Left" Margin="76,172,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="Button_Click" FontWeight="Bold" FontSize="16"/>
-            <Button Content="start lunch" HorizontalAlignment="Left" Margin="253,104,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="Button_Click" FontWeight="Bold" FontSize="16"/>
-            <Button Content="end lunch" HorizontalAlignment="Left" Margin="253,172,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="Button_Click" FontWeight="Bold" FontSize="16"/>
+            <Button Content="start shift" HorizontalAlignment="Left" Margin="76,104,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="Start_Shift" FontWeight="Bold" FontSize="16"/>
+            <Button Content="end shift" HorizontalAlignment="Left" Margin="76,172,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="End_Shift" FontWeight="Bold" FontSize="16"/>
+            <Button Content="start lunch" HorizontalAlignment="Left" Margin="253,104,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="Start_Lunch" FontWeight="Bold" FontSize="16"/>
+            <Button Content="end lunch" HorizontalAlignment="Left" Margin="253,172,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="End_Lunch" FontWeight="Bold" FontSize="16"/>
             <Label Content="ShiftMe" HorizontalAlignment="Left" Margin="61,33,0,0" VerticalAlignment="Top" Width="178" FontSize="36" Height="66" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="129" Margin="603,33,0,0" VerticalAlignment="Top" Width="142" Source="CRU_Logo.png"/>
-        <Button Content="log out" HorizontalAlignment="Left" Margin="76,363,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="OpenMainWindow" FontWeight="Bold" FontSize="16"/>
+        <Button Content="log out" HorizontalAlignment="Left" Margin="76,363,0,0" VerticalAlignment="Top" Width="154" Height="48" Click="LogOut" FontWeight="Bold" FontSize="16"/>
     </Grid>
 </Page>

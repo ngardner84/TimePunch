@@ -9,9 +9,6 @@
         Background = "#CECECE">
 
     <Grid IsEnabled="True">
-        <Frame
-            Name="MainFrame"
-        />
         <Grid.RowDefinitions>
             <RowDefinition Height="64*"/>
             <RowDefinition Height="355*"/>
@@ -22,12 +19,6 @@
             <ColumnDefinition Width="60*"/>
             <ColumnDefinition Width="99*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="username" HorizontalAlignment="Left" Margin="47,42,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="password" HorizontalAlignment="Left" Margin="47,121,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.Column="1" Grid.Row="1"/>
-        <Image Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="129" Margin="568,33,0,0" VerticalAlignment="Top" Width="142" Source="CRU_Logo.png" Grid.Column="1" Grid.RowSpan="2"/>
-        <Label Content="ShiftMe" Grid.Column="1" HorizontalAlignment="Left" Margin="26,33,0,0" VerticalAlignment="Top" Width="178" FontSize="36" Height="53" Grid.RowSpan="2" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left"  Height="45" Margin="47,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Grid.Column="1" Grid.Row="1"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="47,157,0,0" VerticalAlignment="Top" Width="220" Height="45" Grid.Column="1" Grid.Row="1"/>
-        <Button Content="log in" Grid.Column="1" HorizontalAlignment="Left" Margin="294,104,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87" Height="48" Click="OpenShiftWindow" FontWeight="Bold" FontSize="16"/>
+
     </Grid>
 </Window>

@@ -28,15 +28,30 @@ namespace TimePunch
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Start_Shift(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void OpenMainWindow(object sender, RoutedEventArgs e)
+        private void End_Shift(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
+        private void Start_Lunch(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void End_Lunch(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LogOut(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainwindow = new MainWindow();
+            this.Content = mainwindow;
+        }
     }
 }

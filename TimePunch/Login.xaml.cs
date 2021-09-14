@@ -16,25 +16,13 @@ using System.Windows.Shapes;
 namespace TimePunch
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Login : Page
     {
-        public MainWindow()
+        public Login()
         {
             InitializeComponent();
-            MainWindow.Content = new Login();
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        public void ChangeView(Page view)
-        {
-            
-        }
-
     }
 }
