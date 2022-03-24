@@ -50,8 +50,7 @@ namespace TimePunch
 
         private void LogOut(object sender, RoutedEventArgs e)
         {
-            MainWindow mainwindow = new MainWindow();
-            this.Content = mainwindow;
+            Application.Current.MainWindow.Content = new Login();
         }
     }
 }
