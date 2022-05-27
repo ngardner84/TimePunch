@@ -32,3 +32,5 @@ C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\Punch1Window.g.cs
 C:\Users\nguye\OneDrive\Desktop\TimePunch\TimePunch\obj\Debug\Punch1Window.baml
 C:\Users\bryts\Documents\GitHub\TimePunch\TimePunch\obj\Debug\Punch1Window.g.cs
 C:\Users\bryts\Documents\GitHub\TimePunch\TimePunch\obj\Debug\Punch1Window.baml
+C:\Users\bryts\Documents\GitHub\TimePunch\TimePunch\obj\Debug\Login.g.cs
+C:\Users\bryts\Documents\GitHub\TimePunch\TimePunch\obj\Debug\Login.baml

@@ -23,7 +23,7 @@ namespace TimePunch
         public MainWindow()
         {
             InitializeComponent();
-            MainWindow.Content = new Login();
+            this.Content = new Login();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

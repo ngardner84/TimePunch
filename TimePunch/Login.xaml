@@ -11,6 +11,7 @@
       
 
     <Grid>
-        
+        <Label Content="Hi there" HorizontalAlignment="Left" Margin="379,218,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>
