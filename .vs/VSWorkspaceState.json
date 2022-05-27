@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\time2punch",
     "\\TimePunch"
   ],
-  "SelectedNode": "\\TimePunch",
+  "SelectedNode": "\\TimePunch\\TimePunch.sln",
   "PreviewInSolutionExplorer": false
 }

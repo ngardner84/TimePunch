@@ -24,5 +24,10 @@ namespace TimePunch
         {
             InitializeComponent();
         }
+
+        private void loginClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Content = new Punch1Window();
+        }
     }
 }
